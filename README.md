@@ -32,6 +32,10 @@
 
 *В качестве ответа пришлите события, которые попали в логи Suricata и Fail2Ban, прокомментируйте результат.*
 
+### *Ответ* Задание выполнялось на двух ВМ Ububuntu с адресами 192.168.255.241 и 242.
+
+<details>
+
 Suricata сработал везде, кроме первого запроса -sA. В остальных же  случаях лог Suricata выдает, что происходило подозрительное скарирование и классификация идет как "Потенциально опасный трафик" и "Возможна утечка информации". 
 
 Fail2Ban во всех случаях молчал, но я подозреваю, что входящий трафик просто уже заблокирован ранее, когда я повторял упражнения из лекции. И о чем также видно из последнего скришота.
@@ -46,6 +50,8 @@ Fail2Ban во всех случаях молчал, но я подозреваю
 ![image](https://github.com/Ivashka80/13-03_ZaschitaNet/assets/121082757/f2ff5c51-c1e3-4454-ab45-87a9c7ae3545)
 
 ![image](https://github.com/Ivashka80/13-03_ZaschitaNet/assets/121082757/4b7752ac-df0c-4c68-ba2e-0da039c5badf)
+
+</details>
 
 ------
 
@@ -72,18 +78,35 @@ Fail2Ban во всех случаях молчал, но я подозреваю
 
 *В качестве ответа пришлите события, которые попали в логи Suricata и Fail2Ban, прокомментируйте результат.*
 
-Бан выключен
+### *Ответ*
 
-![image](https://github.com/Ivashka80/13-03_ZaschitaNet/assets/121082757/aa41f323-e7a5-4a40-9f46-ebbdf770df07)
+<details>
+ 
+*Fail2ban выключен*
 
-![image](https://github.com/Ivashka80/13-03_ZaschitaNet/assets/121082757/d6823435-c24b-4cd3-a3dd-bfff12b5ee49)
+Пароль подобран. В логе файла auth видна операция подбора пароля. Suricata также показывает сканирование ssh. Лог-файл Fail2ban ничего не показал.
 
-![image](https://github.com/Ivashka80/13-03_ZaschitaNet/assets/121082757/685aab54-d895-46d7-9df9-bb4263ce2525)
+![image](https://github.com/Ivashka80/13-03_ZaschitaNet/assets/121082757/bd5cf7e9-eb49-4d26-b956-6b3010c3e7a6)
 
-Бан включен
+![image](https://github.com/Ivashka80/13-03_ZaschitaNet/assets/121082757/030af316-d806-4888-9f7c-59a2c1f09acd)
 
-![image](https://github.com/Ivashka80/13-03_ZaschitaNet/assets/121082757/dbd0e4b3-8f64-4696-817b-b9e55339ae81)
+![image](https://github.com/Ivashka80/13-03_ZaschitaNet/assets/121082757/bedc85ef-9d43-47f3-b64f-8e3e12f1761d)
 
-![image](https://github.com/Ivashka80/13-03_ZaschitaNet/assets/121082757/a711adf3-43b0-496c-b908-33b711f7a50c)
 
+*Fail2ban включен и в настройках файла включена строка `enable = true`* 
+
+Попытка подключения не удалась.
+В данном случае Suricata показывает постоянное сканирование ssh с классификацией "Возможна утечка информации".
+Лог файла auth показывает попытки подбора пароля.
+Лог-файл Fail2ban также показывает попытку подключения.
+
+![image](https://github.com/Ivashka80/13-03_ZaschitaNet/assets/121082757/39fb61e0-5189-4d5c-99ff-aedb6d9183bf)
+
+![image](https://github.com/Ivashka80/13-03_ZaschitaNet/assets/121082757/44d3a06f-fb9a-40ea-902d-bddbc632e705)
+
+![image](https://github.com/Ivashka80/13-03_ZaschitaNet/assets/121082757/130fc83a-6886-4151-b0d0-1c65ad43ff26)
+
+![image](https://github.com/Ivashka80/13-03_ZaschitaNet/assets/121082757/ced98352-7f3d-4349-ac20-617ffb9617b9)
+
+</details>
 
